@@ -1,4 +1,3 @@
-# Python Code to left rotate an array using Reversal Algorithm
 
 # Function to rotate an array by d elements to the left
 def rotateArr(arr, d):
