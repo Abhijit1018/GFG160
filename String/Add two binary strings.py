@@ -1,6 +1,3 @@
-# Python program to add two binary strings
-# using Bit-by-Bit addition
-
 def trimLeadingZeros(s):
     
     # Find the position of the first '1'
