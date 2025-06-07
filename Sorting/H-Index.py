@@ -18,8 +18,7 @@ def hIndex(citations):
         idx -= 1
         s += freq[idx]
     
-    # Return the largest index for which the count of 
-    # papers with at least idx citations becomes >= idx
+    
     return idx
 
 if __name__ == '__main__':
