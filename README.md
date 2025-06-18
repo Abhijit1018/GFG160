@@ -1,7 +1,3 @@
-Here's a clean, professional `README.md` for your GitHub repository dedicated to the **GeeksforGeeks 160 Days DSA Preparation**:
-
----
-
 ```markdown
 # 🧠 GeeksforGeeks 160 Days DSA Challenge
 
