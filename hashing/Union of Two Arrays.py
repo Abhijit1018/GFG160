@@ -14,7 +14,7 @@ def findUnion(a, b):
     for it in st:
         res.append(it)
     
-    return res
+    return len(res)
 
 if __name__ == "__main__":
     a = [1, 2, 3, 2, 1]
