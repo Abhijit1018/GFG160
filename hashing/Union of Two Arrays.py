@@ -1,18 +1,16 @@
 def findUnion(a, b):
     st = set()  
     
-    # Put all elements of a[] in st
+  
     for i in range(len(a)):
         st.add(a[i])
     
-    # Put all elements of b[] in st
+    
     for i in range(len(b)):
         st.add(b[i])
     
     res = []                            
-
-    # iterate through the set 
-    # to fill the result array 
+ 
     for it in st:
         res.append(it)
     
