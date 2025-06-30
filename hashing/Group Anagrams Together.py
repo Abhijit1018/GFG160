@@ -24,8 +24,6 @@ def anagrams(arr):
     for i in range(len(arr)):
         key = getHash(arr[i])
         
-        # If key is not present in the hash map, add
-        # an empty group (list) in the result and
         # store the index of the group in hash map
         if key not in mp:
             mp[key] = len(res)
