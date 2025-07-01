@@ -12,7 +12,6 @@ def longestUniqueSubstr(s):
 
         start = max(start, lastIndex[ord(s[end]) - ord('a')] + 1)
 
-        # Update result if we get a larger window
         res = max(res, end - start + 1)
 
         # Update last index of s[end]
