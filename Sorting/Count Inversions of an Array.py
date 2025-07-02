@@ -16,8 +16,7 @@ def countAndMerge(arr, l, m, r):
     k = l
     while i < n1 and j < n2:
 
-        # No increment in inversion count
-        # if left[] has a smaller or equal element
+
         if left[i] <= right[j]:
             arr[k] = left[i]
             i += 1
