@@ -31,7 +31,7 @@ def setMatrixZeroes(mat):
         for j in range(m):
             mat[0][j] = 0
 
-    # Mark the first column
+
     if c0 == 0:
         for i in range(n):
             mat[i][0] = 0
