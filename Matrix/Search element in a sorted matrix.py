@@ -19,8 +19,7 @@ def searchMatrix(mat, x):
         if mat[row][col] < x:
             lo = mid + 1
 
-        # If x is less than mat[row][col], search in
-        # left half
+
         else:
             hi = mid - 1
 
