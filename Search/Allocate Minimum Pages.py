@@ -19,8 +19,7 @@ def check(arr, k, pageLimit):
 
 def findPages(arr, k):
     
-    # If number of students are more than total books
-    # then allocation is not possible
+  
     if k > len(arr):
         return -1
     
