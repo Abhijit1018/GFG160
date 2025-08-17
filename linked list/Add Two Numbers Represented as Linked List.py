@@ -1,5 +1,4 @@
-# Python Program to add two number represented as
-# linked list by storing sum on the longer list
+
 
 class Node:
     def __init__(self, val):
