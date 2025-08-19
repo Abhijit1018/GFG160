@@ -1,5 +1,4 @@
-# Python program to find all solutions of the N-Queens problem
-# using backtracking and pruning
+
 
 def nQueenUtil(j, n, board, rows, diag1, diag2, res):
 
