@@ -1,5 +1,3 @@
-
-
 def nQueenUtil(j, n, board, rows, diag1, diag2, res):
 
     if j > n:
