@@ -1,4 +1,3 @@
-# Python program to check if the word exists in the grid or not
 
 # Function to check if a word exists in a grid
 # starting from the first match in the grid
