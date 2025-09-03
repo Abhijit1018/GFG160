@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFG 160 Days DSA Challenge - Abhijit Singh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .topic-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topic-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .problem-count {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .problems-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .problem-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .problem-item:last-child {
+            border-bottom: none;
+        }
+
+        .problem-item:hover {
+            color: #667eea;
+            cursor: pointer;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                gap: 15px;
+            }
+            
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 GFG 160 Days DSA Challenge</h1>
+            <p class="subtitle">Data Structures & Algorithms Journey by Abhijit Singh</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-problems">0</span>
+                    <span>Problems Solved</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="total-topics">0</span>
+                    <span>Topics Covered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">160</span>
+                    <span>Days Challenge</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="topics-grid" id="topics-container">
+            <!-- Topics will be populated by JavaScript -->
+        </div>
+
+        <div class="links">
+            <a href="https://linkedin.com/in/abhijit_singh10" target="_blank">📧 LinkedIn</a>
+            <a href="https://github.com/Abhijit1018" target="_blank">🐙 GitHub</a>
+            <a href="https://practice.geeksforgeeks.org/" target="_blank">💻 GeeksforGeeks</a>
+        </div>
+
+        <div class="footer">
+            <p>⭐ If you find this helpful, don't forget to star the repository!</p>
+            <p>© 2024 Abhijit Singh - GFG 160 Days DSA Challenge</p>
+        </div>
+    </div>
+
+    <script>
+        // Define the topics and their problems
+        const topicsData = {
+            'Array': [
+                'Second-Largest-Element.py',
+                'Move-all-zeroes-to-end.py',
+                'Reverse-array.py',
+                'Rotate-array.py',
+                'Next-permutation.py',
+                'Majority Element II.py',
+                'Stock Buy and Sell – Max one Transaction Allowed.py',
+                'Stock Buy and Sell – Multiple Transaction Allowed.py',
+                'Maximum Product Subarray.py',
+                'Maximum Subarray Sum - Kadane\'s Algorithm.py',
+                'Maximum Circular Subarray Sum.py',
+                'Minimize the Heights II.py',
+                'Find Smallest Missing Positive Number.py'
+            ],
+            'String': [
+                'Add two binary strings.py',
+                'Check if Strings Are Rotations of Each Other.py',
+                'Check if two Strings are Anagrams of each other.py',
+                'First non-repeating character of given string.py',
+                'KMP Algorithm for Pattern Searching.py',
+                'Minimum Characters to Add at Front for Palindrome.py',
+                'String to Integer - Write your own atoi().py'
+            ],
+            'Sorting': [
+                'Count Inversions of an Array.py',
+                'Insert and Merge Interval.py',
+                'Merge Overlapping Intervals.py',
+                'Sort an array of 0s, 1s and 2s - Dutch National Flag Problem.py',
+                'H-Index.py',
+                'Merge Two Sorted Arrays Without Extra Space.py',
+                'Non-Overlapping Intervals.py'
+            ],
+            'Matrix': [
+                'Rotate Square Matrix by 90 Degrees Counterclockwise.py',
+                'Search in a row wise and column wise sorted matrix.py',
+                'Print a given matrix in spiral form.py',
+                'Search in row wise sorted matrix.py',
+                'Set Matrix Rows and Columns to Zeroes.py',
+                'Search element in a sorted matrix.py'
+            ],
+            'Search': [],
+            'Hashing': [],
+            'Two Pointer Technique': [],
+            'Prefix Sum': [],
+            'Linked List': [],
+            'Recursion And Backtracking': [],
+            'Tries': [],
+            'Heap': []
+        };
+
+        const topicIcons = {
+            'Array': '📊',
+            'String': '🔤',
+            'Sorting': '🔄',
+            'Matrix': '⬜',
+            'Search': '🔍',
+            'Hashing': '#️⃣',
+            'Two Pointer Technique': '👆',
+            'Prefix Sum': '➕',
+            'Linked List': '🔗',
+            'Recursion And Backtracking': '🔄',
+            'Tries': '🌳',
+            'Heap': '🏔️'
+        };
+
+        function renderTopics() {
+            const container = document.getElementById('topics-container');
+            let totalProblems = 0;
+            let totalTopics = 0;
+
+            Object.entries(topicsData).forEach(([topic, problems]) => {
+                if (problems.length > 0) {
+                    totalTopics++;
+                    totalProblems += problems.length;
+                }
+
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                
+                const problemsHtml = problems.length > 0 
+                    ? problems.map(problem => `<div class="problem-item">${problem.replace('.py', '')}</div>`).join('')
+                    : '<div class="problem-item" style="color: #999;">Coming soon...</div>';
+
+                topicCard.innerHTML = `
+                    <div class="topic-title">
+                        <div class="topic-icon">${topicIcons[topic] || '📝'}</div>
+                        ${topic}
+                    </div>
+                    <div class="problem-count">${problems.length} problem${problems.length !== 1 ? 's' : ''} solved</div>
+                    <div class="problems-list">
+                        ${problemsHtml}
+                    </div>
+                `;
+
+                container.appendChild(topicCard);
+            });
+
+            // Update stats
+            document.getElementById('total-problems').textContent = totalProblems;
+            document.getElementById('total-topics').textContent = totalTopics;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', renderTopics);
+
+        // Add click handlers for problem items
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('problem-item') && !e.target.textContent.includes('Coming soon')) {
+                const problemName = e.target.textContent + '.py';
+                const topicCard = e.target.closest('.topic-card');
+                const topicName = topicCard.querySelector('.topic-title').textContent.trim();
+                
+                // Try to open the file in a new window/tab
+                const fileName = problemName;
+                const fileUrl = `./${encodeURIComponent(topicName)}/${encodeURIComponent(fileName)}`;
+                
+                // Open in new tab to view the code
+                window.open(fileUrl, '_blank');
+            }
+        });
+
+        // Add topic card click handlers to show/hide problems
+        document.addEventListener('click', function(e) {
+            const topicCard = e.target.closest('.topic-card');
+            if (topicCard && !e.target.classList.contains('problem-item')) {
+                const problemsList = topicCard.querySelector('.problems-list');
+                if (problemsList.style.display === 'none') {
+                    problemsList.style.display = 'block';
+                } else {
+                    problemsList.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
