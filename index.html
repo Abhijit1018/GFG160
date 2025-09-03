@@ -337,11 +337,12 @@
             if (e.target.classList.contains('problem-item') && !e.target.textContent.includes('Coming soon')) {
                 const problemName = e.target.textContent + '.py';
                 const topicCard = e.target.closest('.topic-card');
-                const topicName = topicCard.querySelector('.topic-title').textContent.trim();
+                const topicTitle = topicCard.querySelector('.topic-title');
+                const topicName = topicTitle.textContent.replace(/^\s*[^\w]+\s*/, '').trim(); // Remove emoji and spaces
                 
                 // Try to open the file in a new window/tab
                 const fileName = problemName;
-                const fileUrl = `./${encodeURIComponent(topicName)}/${encodeURIComponent(fileName)}`;
+                const fileUrl = `./${topicName}/${fileName}`;
                 
                 // Open in new tab to view the code
                 window.open(fileUrl, '_blank');
